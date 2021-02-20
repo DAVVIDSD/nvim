@@ -13,7 +13,6 @@ set clipboard=unnamedplus
 syntax enable
 set showcmd
 set ruler
-
 " set cursorline
 set encoding=utf-8
 set showmatch
@@ -39,6 +38,7 @@ call plug#begin('~/.vim/plugged')
 
 
 Plug 'rakr/vim-one'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -53,11 +53,15 @@ Plug 'honza/vim-snippets'
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'dracula/vim'
 Plug 'tpope/vim-commentary'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme dracula
-hi Normal guibg=NONE ctermbg=NONE
+" let g:gruvbox_contrast_dark='hard'
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
+colorscheme tokyonight
+" hi Normal guibg=NONE ctermbg=NONE
 
 "Comands
 let mapleader=" "
@@ -81,7 +85,7 @@ nnoremap <leader><up> :resize -5<cr>
 nnoremap <leader><right> :vertical resize +10<cr>
 
 let g:lightline = {
-      \ 'colorscheme': 'horizon',
+      \ 'colorscheme': 'ayu',
       \ }
 
 
