@@ -38,6 +38,7 @@ call plug#begin('~/.vim/plugged')
 
 
 Plug 'rakr/vim-one'
+" PLug 'Yggdroot/indentLine'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -54,6 +55,7 @@ Plug 'hardcoreplayers/oceanic-material'
 Plug 'dracula/vim'
 Plug 'tpope/vim-commentary'
 Plug 'ayu-theme/ayu-vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " let g:gruvbox_contrast_dark='hard'
@@ -108,4 +110,5 @@ endif
 "nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:indentLine_char = '▏'
 
