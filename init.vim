@@ -55,15 +55,16 @@ Plug 'hardcoreplayers/oceanic-material'
 Plug 'dracula/vim'
 Plug 'tpope/vim-commentary'
 Plug 'ayu-theme/ayu-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " let g:gruvbox_contrast_dark='hard'
-let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:tokyonight_transparent_background = 1
-colorscheme tokyonight
-" hi Normal guibg=NONE ctermbg=NONE
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
 
 "Comands
 let mapleader=" "
@@ -87,10 +88,14 @@ nnoremap <leader><up> :resize -5<cr>
 nnoremap <leader><right> :vertical resize +10<cr>
 
 let g:lightline = {
-      \ 'colorscheme': 'ayu',
+      \ 'colorscheme': 'horizon',
       \ }
 
-
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
